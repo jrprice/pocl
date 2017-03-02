@@ -31,7 +31,7 @@ set(PROGRAMS_TO_BUILD test_clFinish test_clGetDeviceInfo test_clGetEventInfo
   test_version test_kernel_cache_includes test_event_cycle test_link_error
   test_read-copy-write-buffer test_buffer-image-copy test_clCreateSubDevices test_event_free
   test_enqueue_kernel_from_binary test_user_event
-  test_clSetMemObjectDestructorCallback)
+  test_clSetMemObjectDestructorCallback test_clCreateSampler)
 
 #EXTRA_DIST= \
 # test_kernel_src_in_pwd.h \
@@ -104,6 +104,8 @@ add_test_pocl(NAME "runtime/test_user_event" COMMAND  "test_user_event")
 
 add_test_pocl(NAME "runtime/clSetMemObjectDestructorCallback" COMMAND  "test_clSetMemObjectDestructorCallback")
 
+add_test_pocl(NAME "runtime/clCreateSampler" COMMAND  "test_clCreateSampler")
+
 set_tests_properties( "runtime/clGetDeviceInfo" "runtime/clEnqueueNativeKernel"
   "runtime/clGetEventInfo" "runtime/clCreateProgramWithBinary"
   "runtime/clBuildProgram" "runtime/clFinish" "runtime/clSetEventCallback"
@@ -113,7 +115,7 @@ set_tests_properties( "runtime/clGetDeviceInfo" "runtime/clEnqueueNativeKernel"
   "runtime/test_read-copy-write-buffer" "runtime/test_buffer-image-copy" #"runtime/test_link_error"
   "runtime/test_event_free" "runtime/clCreateSubDevices"
   "runtime/test_enqueue_kernel_from_binary" "runtime/test_user_event"
-  "runtime/clSetMemObjectDestructorCallback"
+  "runtime/clSetMemObjectDestructorCallback" "runtime/clCreateSampler"
   PROPERTIES
     COST 2.0
     PROCESSORS 1
