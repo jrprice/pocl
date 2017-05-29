@@ -69,6 +69,7 @@ cl_event pocl_mem_manager_new_event ()
     {
       LL_DELETE (mm->event_list, ev);
       POCL_UNLOCK (mm->event_lock);
+      memset (ev, 0, sizeof (struct _cl_event));
       return ev;
     }
   POCL_UNLOCK (mm->event_lock);
